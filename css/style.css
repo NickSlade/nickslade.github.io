@@ -592,7 +592,9 @@ article .featured-media img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1rem auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
 }
 article .article-footer .pull-left {
   float: left;
