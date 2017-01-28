@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hide other shipping methods when Free Shipping is available | nick slade | digital scrapbook of my interests and useful info</title>
+
+  
+  <meta name="author" content="Nick Slade">
+  
+
+  
+  <meta name="description" content="digital scrapbook of my interests and useful info">
+  
+
+  
+  
+  <meta name="keywords" content="web design,woocommerce,web desgn,shipping">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Hide other shipping methods when Free Shipping is available"/>
+
+  <meta property="og:site_name" content="nick slade"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="nick slade" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">nick slade</a>
+    </h1>
+    <p class="site-description">digital scrapbook of my interests and useful info</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Hide other shipping methods when Free Shipping is available</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/01/27/woocommerce-hide-other-shipping-methods-when-free-shipping-available/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-01-27T11:55:00.000Z">
+          2017-01-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2>Snippet for WC 2.6+</h2>
+<p><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Hide shipping rates when free shipping is available.</div><div class="line"> * Updated to support WooCommerce 2.6 Shipping Zones.</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span> array $rates Array of rates found for the package.</div><div class="line"> * <span class="doctag">@return</span> array</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">my_hide_shipping_when_free_is_available</span><span class="params">( $rates )</span> </span>&#123;</div><div class="line">	$free = <span class="keyword">array</span>();</div><div class="line">	<span class="keyword">foreach</span> ( $rates <span class="keyword">as</span> $rate_id =&gt; $rate ) &#123;</div><div class="line">		<span class="keyword">if</span> ( <span class="string">'free_shipping'</span> === $rate-&gt;method_id ) &#123;</div><div class="line">			$free[ $rate_id ] = $rate;</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ! <span class="keyword">empty</span>( $free ) ? $free : $rates;</div><div class="line">&#125;</div><div class="line">add_filter( <span class="string">'woocommerce_package_rates'</span>, <span class="string">'my_hide_shipping_when_free_is_available'</span>, <span class="number">100</span> );</div></pre></td></tr></table></figure></p>
+<p><em>via <a href="https://docs.woocommerce.com/document/hide-other-shipping-methods-when-free-shipping-is-available/" target="_blank" rel="external">https://docs.woocommerce.com/document/hide-other-shipping-methods-when-free-shipping-is-available/</a></em></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Web-design/">Web design</a>, <a href="/categories/Web-design/Wordpress/">Wordpress</a>, <a href="/categories/Web-design/Wordpress/WooCommerce/">WooCommerce</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/web-design/">web design</a><a href="/tags/woocommerce/">woocommerce</a><a href="/tags/web-desgn/">web desgn</a><a href="/tags/shipping/">shipping</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 Nick Slade
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
